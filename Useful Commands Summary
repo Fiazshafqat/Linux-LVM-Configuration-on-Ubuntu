@@ -1,0 +1,23 @@
+# Check disks
+lsblk
+
+# Create physical volumes
+sudo pvcreate /dev/sdb /dev/sdc
+
+# Create volume group
+sudo vgcreate volume-group1 /dev/sdb /dev/sdc
+
+# Create logical volume
+sudo lvcreate -L 4.5G -n lv1 volume-group1
+
+# Create filesystem
+sudo mkfs.ext4 /dev/volume-group1/lv1
+
+# Create mount point
+sudo mkdir /mnt/data
+
+# Mount logical volume
+sudo mount /dev/volume-group1/lv1 /mnt/data
+
+# Verify mount
+df -h
