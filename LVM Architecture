@@ -1,0 +1,16 @@
+Physical Disks
+   /dev/sdb
+   /dev/sdc
+        ↓
+Physical Volumes (PV)
+        ↓
+Volume Group (VG)
+   volume-group1
+        ↓
+Logical Volume (LV)
+   lv1
+        ↓
+EXT4 Filesystem
+        ↓
+Mounted at
+   /mnt/data
